@@ -26,10 +26,10 @@ public class AccountServices {
         account.setBalance(account.getBalance() + amount);
         System.out.println("Your balance is now: $" + account.getBalance());
     }
-    public void withdral(Double amount){
+    public void withdraw(Double amount){
         while (account.getBalance() < amount){
             System.out.println("You do not have enough money. You have $" + account.getBalance() + " available for withdrawal.");
-            System.out.print("How much do you want to withdral? ");
+            System.out.print("How much do you want to withdraw? ");
             amount = scanner.nextDouble();
 
         }

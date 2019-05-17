@@ -33,13 +33,13 @@ public class Program {
             if (b == 'y') {
 
                 System.out.print("How much would you like to withdraw? ");
-                Double withdral = scanner.nextDouble();
-                as.withdral(withdral);
+                Double withdraw = scanner.nextDouble();
+                as.withdraw(withdraw);
             }
 
 
         }catch (InputMismatchException e){
-            System.out.println("Error: Deposit and withdral inputs must contain only numbers.");
+            System.out.println("Error: Deposit and withdraw inputs must contain only numbers.");
 
 
         }
