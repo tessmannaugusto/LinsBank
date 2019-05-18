@@ -20,23 +20,27 @@ public class Program {
 
             AccountServices as = new AccountServices(new Account(name, deposit));
 
-            System.out.print("Would you like to make a deposit(y/n)? ");
-            char a = scanner.next().toLowerCase().charAt(0);
-            if (a == 'y'){
-                System.out.print("How much would you like to deposit? ");
-                Double amount = scanner.nextDouble();
-                as.deposit(amount);
+            int o = 0;
+            while(o != -1) {
+                System.out.println("Menu: ");
+                System.out.println("1. Deposit");
+                System.out.println("2. Withdraw");
+                System.out.println("Option (enter -1 to exit): ");
+                o = scanner.nextInt();
+                if (o == 1){
+                    System.out.print("How much would you like to deposit? ");
+                    Double amount = scanner.nextDouble();
+                    as.deposit(amount);
+                }else if (o == 2){
+                    System.out.print("How much would you like to withdraw? ");
+                    Double withdraw = scanner.nextDouble();
+                    as.withdraw(withdraw);
+                }else if (o != -1){
+                    System.out.println("Wrong number, please choose again.");
+
+                }
             }
-
-            System.out.print("Would you like to make a withdrawal(y/n)? ");
-            char b = scanner.next().toLowerCase().charAt(0);
-            if (b == 'y') {
-
-                System.out.print("How much would you like to withdraw? ");
-                Double withdraw = scanner.nextDouble();
-                as.withdraw(withdraw);
-            }
-
+            System.out.println("Program finished");
 
         }catch (InputMismatchException e){
             System.out.println("Error: Deposit and withdraw inputs must contain only numbers.");
