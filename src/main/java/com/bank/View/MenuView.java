@@ -32,9 +32,7 @@ public class MenuView extends View {
             if (o == 1) {
                 new DepositView(account).print();
             } else if (o == 2) {
-                System.out.print("How much would you like to withdraw? ");
-                Double withdraw = scanner.nextDouble();
-                accountServices.withdraw(withdraw);
+                new WithdrawView(account).print();
             }else if( o == 3) {
                 new BalanceView(account).print();
             } else if (o != -1) {

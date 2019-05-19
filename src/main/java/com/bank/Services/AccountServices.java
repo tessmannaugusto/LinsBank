@@ -20,24 +20,7 @@ public class AccountServices {
         account.setBalance(account.getBalance() + amount);
     }
     public void withdraw(Double amount){
-        while (amount <= 0 || account.getBalance() < amount){
-            System.out.println("You either do not have enough money or you entered a negative or null amount" +
-                    ". You have $" + account.getBalance() + " available for withdrawal.");
-            System.out.println("Would you like to try depositing again (y/n)?");
-            char r = scanner.next().charAt(0);
-            if (r == 'y') {
-                System.out.println("How much do you want to withdraw? ");
-                amount = scanner.nextDouble();
-                account.setBalance(account.getBalance() - amount);
-                System.out.println("Your balance now is: $" + account.getBalance() );
-                return;
-            }else if (r == 'n'){
-                amount = 0.0;
-                break;
-            }
-        }
         account.setBalance(account.getBalance() - amount);
-        System.out.println("Your balance is now: $" + account.getBalance());
     }
 
     public void validateAccount(Integer number, Integer branch){
