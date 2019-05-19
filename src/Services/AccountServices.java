@@ -25,9 +25,12 @@ public class AccountServices {
                 account.setBalance(account.getBalance() + amount);
                 System.out.println("Your balance is now: $" + account.getBalance());
             }else if( r == 'n'){
+                amount = 0.0;
                 break;
             }
         }
+        account.setBalance(account.getBalance() + amount);
+        System.out.println("Your balance is now: $" + account.getBalance());
     }
     public void withdraw(Double amount){
         while (amount <= 0 || account.getBalance() < amount){
@@ -41,9 +44,12 @@ public class AccountServices {
                 account.setBalance(account.getBalance() - amount);
                 System.out.println("Your balance now is: $" + account.getBalance() );
             }else if (r == 'n'){
+                amount = 0.0;
                 break;
             }
         }
+        account.setBalance(account.getBalance() + amount);
+        System.out.println("Your balance is now: $" + account.getBalance());
     }
 
 
