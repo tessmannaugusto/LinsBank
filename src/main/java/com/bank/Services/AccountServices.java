@@ -1,6 +1,6 @@
-package Services;
+package main.java.com.bank.Services;
 
-import Entities.Account;
+import main.java.com.bank.Entities.Account;
 
 import java.util.Scanner;
 
@@ -8,6 +8,7 @@ public class AccountServices {
 
     Scanner scanner = new Scanner(System.in);
     private Account account;
+    private boolean isLogged = false;
 
 
     public AccountServices(Account account) {
@@ -24,6 +25,7 @@ public class AccountServices {
                 amount = scanner.nextDouble();
                 account.setBalance(account.getBalance() + amount);
                 System.out.println("Your balance is now: $" + account.getBalance());
+                return;
             }else if( r == 'n'){
                 amount = 0.0;
                 break;
@@ -43,14 +45,37 @@ public class AccountServices {
                 amount = scanner.nextDouble();
                 account.setBalance(account.getBalance() - amount);
                 System.out.println("Your balance now is: $" + account.getBalance() );
+                return;
             }else if (r == 'n'){
                 amount = 0.0;
                 break;
             }
         }
-        account.setBalance(account.getBalance() + amount);
+        account.setBalance(account.getBalance() - amount);
         System.out.println("Your balance is now: $" + account.getBalance());
     }
 
+    public void validateAccount(Integer number, Integer branch){
 
+        if (number.equals(account.getNumber()) && branch.equals(account.getBranch())){
+            isLogged = true;
+            System.out.println("You have successfully logged in.");
+        }else {
+            System.out.println("Wrong account or branch number. Please try it again.");
+        }
+
+    }
+
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+
+    public Double getBalance() {
+        return account.getBalance();
+    }
 }
+
+
+
+
