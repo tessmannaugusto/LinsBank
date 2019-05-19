@@ -6,8 +6,8 @@ import main.java.com.bank.Services.AccountServices;
 
 import java.util.Scanner;
 
-public class MenuView {
-    Scanner scanner = new Scanner(System.in);
+public class MenuView extends View {
+
     private Account account;
     private AccountServices accountServices;
 
@@ -16,6 +16,7 @@ public class MenuView {
         accountServices = new AccountServices(account);
     }
 
+    @Override
     public void print(){
         int o = 0;
         while (o != -1) {
@@ -29,9 +30,7 @@ public class MenuView {
             System.out.print("Option (enter -1 to exit): ");
             o = scanner.nextInt();
             if (o == 1) {
-                System.out.print("How much would you like to deposit? ");
-                Double amount = scanner.nextDouble();
-                accountServices.deposit(amount);
+                new DepositView(account).print();
             } else if (o == 2) {
                 System.out.print("How much would you like to withdraw? ");
                 Double withdraw = scanner.nextDouble();

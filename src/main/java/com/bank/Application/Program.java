@@ -38,6 +38,9 @@ public class Program {
             menuView.print();
 
 
+            
+
+
         }catch (InputMismatchException e){
             System.out.println("Error: Account number, Account Branch, Deposit and withdraw inputs must contain only numbers." +
                      "Please try again.");
