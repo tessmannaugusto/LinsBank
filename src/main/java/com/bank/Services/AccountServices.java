@@ -71,9 +71,6 @@ public class AccountServices {
     }
 
 
-    public Double getBalance() {
-        return account.getBalance();
-    }
 }
 
 

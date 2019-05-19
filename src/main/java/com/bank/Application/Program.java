@@ -2,6 +2,7 @@ package main.java.com.bank.Application;
 
 import main.java.com.bank.Entities.Account;
 import main.java.com.bank.Services.AccountServices;
+import main.java.com.bank.View.BalanceView;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,7 +12,8 @@ public class Program {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        AccountServices as = new AccountServices(new Account(123456, 1111, 0.0));
+        Account acc = new Account(123456, 1111, 0.0);
+        AccountServices as = new AccountServices(acc);
         try {
             while (!as.isLogged()) {
                 System.out.println("Welcome to Lins Bank. Log in to your account to access bank services. ");
@@ -52,8 +54,7 @@ public class Program {
                         Double withdraw = scanner.nextDouble();
                         as.withdraw(withdraw);
                     }else if( o == 3) {
-                        System.out.println("Your account balance is: " + as.getBalance());
-
+                        new BalanceView(acc).print();
                     } else if (o != -1) {
                         System.out.println("Wrong number, please choose again.");
                     }
