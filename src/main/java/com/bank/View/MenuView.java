@@ -4,7 +4,6 @@ package main.java.com.bank.View;
 import main.java.com.bank.Entities.Account;
 import main.java.com.bank.Services.AccountServices;
 
-import java.util.Scanner;
 
 public class MenuView extends View {
 

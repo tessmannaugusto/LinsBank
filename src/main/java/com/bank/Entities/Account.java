@@ -6,8 +6,6 @@ public class Account {
 
     private Double balance;
 
-    public Account(){
-    }
 
     public Account(Integer number, Integer branch, Double balance) {
         this.number = number;

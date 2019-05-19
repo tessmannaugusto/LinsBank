@@ -2,13 +2,11 @@ package main.java.com.bank.Services;
 
 import main.java.com.bank.Entities.Account;
 
-import java.util.Scanner;
 
 public class AccountServices {
 
-    Scanner scanner = new Scanner(System.in);
+
     private Account account;
-    private boolean isLogged = false;
 
 
     public AccountServices(Account account) {
@@ -23,20 +21,11 @@ public class AccountServices {
         account.setBalance(account.getBalance() - amount);
     }
 
-    public void validateAccount(Integer number, Integer branch){
-
-        if (number.equals(account.getNumber()) && branch.equals(account.getBranch())){
-            isLogged = true;
-            System.out.println("You have successfully logged in.");
-        }else {
-            System.out.println("Wrong account or branch number. Please try it again.");
-        }
-
+    public boolean validateAccount(Integer number, Integer branch){
+        return number.equals(account.getNumber()) && branch.equals(account.getBranch());
     }
 
-    public boolean isLogged() {
-        return isLogged;
-    }
+
 
 
 }
