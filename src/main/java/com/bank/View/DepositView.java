@@ -25,9 +25,13 @@ public class DepositView extends View{
             if (r == 'y') {
                 System.out.println("How much do you want to deposit? ");
                 amount = scanner.nextDouble();
-                accountServices.deposit(amount);
-                System.out.println("Your balance is now: $" + account.getBalance());
-                return;
+                if (amount <= 0){
+
+                }else {
+                    accountServices.deposit(amount);
+                    System.out.println("Your balance is now: $" + account.getBalance());
+                    return;
+                }
             }else if( r == 'n'){
                 amount = 0.0;
                 break;

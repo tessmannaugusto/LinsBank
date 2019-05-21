@@ -20,7 +20,7 @@ public class WithdrawView extends View {
         while (amount <= 0 || account.getBalance() < amount){
             System.out.println("You either do not have enough money or you entered a negative or null amount" +
                     ". You have $" + account.getBalance() + " available for withdrawal.");
-            System.out.println("Would you like to try depositing again (y/n)?");
+            System.out.println("Would you like to try withdrawing again (y/n)?");
             char r = scanner.next().charAt(0);
             if (r == 'y') {
                 System.out.println("How much do you want to withdraw? ");
