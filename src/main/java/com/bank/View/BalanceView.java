@@ -13,6 +13,8 @@ public class BalanceView extends View {
 
     @Override
     public void print(){
-        System.out.println("Your account balance is: " + account.getBalance() );
+        System.out.println("Your account balance is: " + account.getBalance());
+        System.out.println("Last transactions: ");
+        account.getTransactions();
     }
 }
