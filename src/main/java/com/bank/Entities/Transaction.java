@@ -6,6 +6,10 @@ import java.util.Date;
 
 public class Transaction {
 
+    public enum TransactionType {
+        DEBIT,
+        CREDIT;
+    }
 
 
     private Double amount;

@@ -4,9 +4,8 @@ import main.java.com.bank.Entities.Account;
 import main.java.com.bank.Entities.Transaction;
 
 
-
-import static main.java.com.bank.Entities.TransactionType.CREDIT;
-import static main.java.com.bank.Entities.TransactionType.DEBIT;
+import static main.java.com.bank.Entities.Transaction.TransactionType.CREDIT;
+import static main.java.com.bank.Entities.Transaction.TransactionType.DEBIT;
 
 
 public class AccountServices {
