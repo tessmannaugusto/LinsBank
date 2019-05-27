@@ -19,13 +19,8 @@ public class Account {
 
     }
 
-    public void getTransactions( ) {
-        transactions.sort(Comparator.comparing(Transaction::getDate).reversed());
-        for (int i = 0; i < transactions.size(); i++) {
-            if( i  < 5) {
-                    System.out.println(transactions.get(i));
-            }
-        }
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     public Integer getNumber() {
