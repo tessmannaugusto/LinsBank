@@ -8,13 +8,13 @@ import static main.java.com.bank.Entities.Transaction.TransactionType.CREDIT;
 import static main.java.com.bank.Entities.Transaction.TransactionType.DEBIT;
 
 
-public class AccountServices {
+public class AccountService {
 
 
     private Account account;
 
 
-    public AccountServices(Account account) {
+    public AccountService(Account account) {
         this.account = account;
     }
 

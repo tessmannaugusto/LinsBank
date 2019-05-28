@@ -1,16 +1,16 @@
 package main.java.com.bank.View;
 
 import main.java.com.bank.Entities.Account;
-import main.java.com.bank.Services.AccountServices;
+import main.java.com.bank.Services.AccountService;
 
 public class DepositView extends View{
 
     private Account account;
-    private AccountServices accountServices;
+    private AccountService accountService;
 
     public DepositView(Account account) {
         this.account = account;
-        accountServices = new AccountServices(account);
+        accountService = new AccountService(account);
     }
 
 
@@ -28,7 +28,7 @@ public class DepositView extends View{
                 if (amount <= 0){
 
                 }else {
-                    accountServices.deposit(amount);
+                    accountService.deposit(amount);
                     System.out.println("Your balance is now: $" + account.getBalance());
                     return;
                 }
@@ -37,7 +37,7 @@ public class DepositView extends View{
                 break;
             }
         }
-        accountServices.deposit(amount);
+        accountService.deposit(amount);
         System.out.println("Your balance is now: $" + account.getBalance());
     }
 }

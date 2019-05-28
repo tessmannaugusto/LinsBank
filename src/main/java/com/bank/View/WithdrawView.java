@@ -1,16 +1,16 @@
 package main.java.com.bank.View;
 
 import main.java.com.bank.Entities.Account;
-import main.java.com.bank.Services.AccountServices;
+import main.java.com.bank.Services.AccountService;
 
 public class WithdrawView extends View {
 
     private Account account;
-    private AccountServices accountServices;
+    private AccountService accountService;
 
     public WithdrawView(Account account) {
         this.account = account;
-        accountServices = new AccountServices(account);
+        accountService = new AccountService(account);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class WithdrawView extends View {
                 if (amount <=0 || account.getBalance() < amount){
 
                 }else {
-                    accountServices.withdraw(amount);
+                    accountService.withdraw(amount);
                     System.out.println("Your balance now is: $" + account.getBalance());
                     return;
                 }
@@ -37,7 +37,7 @@ public class WithdrawView extends View {
                 break;
             }
         }
-        accountServices.withdraw(amount);
+        accountService.withdraw(amount);
         System.out.println("Your balance is now: $" + account.getBalance());
     }
 

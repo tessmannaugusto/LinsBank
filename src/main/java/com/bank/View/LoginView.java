@@ -1,18 +1,18 @@
 package main.java.com.bank.View;
 
 import main.java.com.bank.Entities.Account;
-import main.java.com.bank.Services.AccountServices;
+import main.java.com.bank.Services.AccountService;
 
 
 public class LoginView extends View{
 
     private Account account;
-    private AccountServices accountServices;
+    private AccountService accountService;
 
 
     public LoginView(Account account) {
         this.account = account;
-        accountServices = new AccountServices(account);
+        accountService = new AccountService(account);
     }
 
     public void print(){
@@ -34,7 +34,7 @@ public class LoginView extends View{
                 branch = scanner.nextInt();
             }
 
-            isLogged = accountServices.validateAccount(number, branch);
+            isLogged = accountService.validateAccount(number, branch);
             if (!isLogged){
                 System.out.println("Wrong account number or account branch. Please try again.");
             }
