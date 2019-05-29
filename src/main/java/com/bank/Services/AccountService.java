@@ -4,17 +4,17 @@ import main.java.com.bank.Entities.Account;
 import main.java.com.bank.Entities.Transaction;
 
 
-import static main.java.com.bank.Entities.Transaction.TransactionType.CREDIT;
-import static main.java.com.bank.Entities.Transaction.TransactionType.DEBIT;
+import static main.java.com.bank.Entities.Transaction.Type.CREDIT;
+import static main.java.com.bank.Entities.Transaction.Type.DEBIT;
 
 
-public class AccountServices {
+public class AccountService {
 
 
     private Account account;
 
 
-    public AccountServices(Account account) {
+    public AccountService(Account account) {
         this.account = account;
     }
 

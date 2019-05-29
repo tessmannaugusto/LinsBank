@@ -6,17 +6,17 @@ import java.util.Date;
 
 public class Transaction {
 
-    public enum TransactionType {
+    public enum Type {
         DEBIT,
         CREDIT;
     }
 
 
     private Double amount;
-    private TransactionType type;
+    private Type type;
     private Date date = new Date();
 
-    public Transaction(Double amount, TransactionType type) {
+    public Transaction(Double amount, Type type) {
         this.amount = amount;
         this.type = type;
     }
@@ -25,14 +25,11 @@ public class Transaction {
         return date;
     }
 
-    @Override
-    public String toString() {
-        if (type == TransactionType.DEBIT){
-            return "-" + amount ;
-
-        }else{
-            return "+" + amount ;
-        }
+    public Double getAmount() {
+        return amount;
     }
 
+    public Type getType() {
+        return type;
+    }
 }
