@@ -1,18 +1,18 @@
 package main.java.com.bank.View;
 
 import main.java.com.bank.Entities.Account;
-import main.java.com.bank.Services.AccountServices;
+import main.java.com.bank.Services.AccountService;
 
 
 public class LoginView extends View{
 
     private Account account;
-    private AccountServices accountServices;
+    private AccountService accountServices;
 
 
     public LoginView(Account account) {
         this.account = account;
-        accountServices = new AccountServices(account);
+        accountServices = new AccountService(account);
     }
 
     public void print(){
